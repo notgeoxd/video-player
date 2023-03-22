@@ -1,0 +1,30 @@
+button {
+    inline-size: 32px;
+    block-size: 32px; 
+    border: none; /*quitar borde*/
+    background-color: transparent; /*para que el fondo sea transparente*/
+    background-repeat: no-repeat; /*para no repetir la imagen*/
+    background-position: center; /*para centrar la imagen dentro de el boton*/
+    cursor: pointer; /*para cuando pasas con el cursor en los botones se conbierta el cursos en manita*/
+}
+
+.button:active{            /*para "animar" i hacer que cuando picas los botones se hagan chiquitos*/
+    transform: scale(.9);  /*si 1 es el 100% del boton , 0.9 es el 90% para hacerce chiquito*/
+}
+
+#Play {
+    background-image: url("../images/play.svg") /*buscar imagen : si quieres salir de una carpeta tienes que poner 2puntos ..*/
+}
+
+#Pause{
+    background-image: url("../images/pause.svg");
+
+}
+
+#backward{
+    background-image: url("../images/-10.svg")
+}
+
+#forward{
+    background-image: url("../images/+10.svg")
+}

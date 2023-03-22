@@ -1,0 +1,43 @@
+<!--mi primera pagina web en html enllazando css -->
+<!DOCTYPE html> 
+<html lang="es"> <!--esto es el idioma de la pagina/-->
+<head>
+    <link rel="stylesheet" href="./css/Styles.css"> <!--link para enllazar css-->
+    <meta charset="UTF-8"> <!--tipode como se decodifica. como para que entiendan ;as tildes por ejemplo-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--cpmpatiblilidad entre navegador-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web proyect</title> <!--esto es el titulo de arriba de la pagina web-->
+
+</head>
+<body>
+    <h1>Hola mundo!</h1>
+    <h2>Hola mundo!</h2>
+    <h3>Hola mundo!</h3>
+    <h5>Hola mundo!</h5>
+    <p>Hola mundo</p>
+
+    <div class="wrapper"> <!--.weapper para crear elemento dir-->
+        <div class="player"> <!-- esto es un contenedor (lo eh creado solo diciendo ".player" i de alli me crea un elemnto div)-->
+            <!--<video id="video" poster="./images/poster.jpg" controls muted src="./videos/lofi.mp4"width="400"></video>  Donde escribimos "controles son los controles predefinidos de las paginas web(pause play i retrocedero o adelantar)" -->
+            <video id="video" poster="./images/poster.jpg" muted src="./videos/lofi.mp4"width="400"></video> <!--navegando entre carpetas es ./ para donde esta guardado nuestro proyecto sigamos entre carpetas. poster es para colocar una imagen en el video quando el video no se esta reproduciendo-->
+            <!--el id es crear un nombre espesifico para esa sola cosa y luego usarlo en otras con el "#"-->
+            <div class="player-overlay"> <!--capa encima de las cosas-->
+                <h2 class="player-title">musica para programar</h2>
+                <div class="player-actions"> <!--agrupar los botones-->
+                    <button class="button"id="backward" aria-label="retroceder 10 segundos" title="retroceder 10 segundos"></button> <!--arial-label dice que significa este elemento -->
+                    <button class="button"id="Play" aria-label="play" title="Play"></button> <!--title es un elemento que pone el nombre a las cosas si dejas el raton sobre ellas-->
+                    <button class="button" hidden id="Pause" aria-label="pausar" title="Pausar"></button> <!--hidden es un atributo para html para que no se vea el boton de la pausa -->
+                    <button class="button"id="forward" aria-label="adelantar 10 segundos" title="adelantar 10 segundos"></button>
+                </div>
+                <div class="player-progress">
+                    <!--min = 0 representa 0 segundos, value es que hace que arranque desde 0  , step es como se mueve en segundos -->
+                    <input id="progress" type="range" min="0" value="0" step="1"> <!--crea como una barra de tiempo en el video-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Java script/index.js"></script>
+
+</body>
+</html>

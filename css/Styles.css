@@ -1,0 +1,65 @@
+@import './buttons.css'; /*si queremos inportar una hoja de 
+estilo dentro de una hoja de estilo.
+ despues de crear './buttons.css' mantenemos control i le quiqueamos para crear uno nuevo */
+body{  /*el fondo*/
+    background-color:darkcyan; /*esto es para cambiar el color del fondo*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*esto es para cambiar fondo de letra */
+}
+.wrapper{ /*centrar el video*/
+    max-inline-size: 900px; /*max-inline es quando llega a 900px se para alli*/
+    margin: auto;    /*centrar verticalmente*/
+}
+.player {
+    margin-block-start: 100px; /*cre*/
+    /* border: 1px solid red; */
+    position: relative; /*para quitar position estatica y poner relative*/
+}
+.player video{
+    inline-size: 100%; /*para agrandar el video tan grande como la pagina*/
+    /*border: 1px solid rgb(110, 51, 170); /*poner un borde al video*/
+    aspect-ratio: 16/9; /*para que siempre tenga esa relacion de aspecto */
+    vertical-align: middle; /*por defecto es baseline asi que ponemos middle para positionar mejor el video*/
+    object-fit: cover; /*la miniatura del video se expande de manera proporcional al video para que quede bonito i simetrico*/
+}
+.player-title { /*el titulo dentro del video*/
+    color: wheat; /*esta propiedad es para ponerle el color al los textos */
+    position: absolute; /*colocan las cosas encima de todo*/
+    inset-block-start: 0; /*va des de "el numero insertado en px" des de el elemento relativo mas cercano osea "player" de (arriba abajo)*/
+    inset-inline-start: 20px; /*moverlo vertiacalmente "derecha izquierda"*/
+    margin: 0; /*quitar margen*/
+}
+.player-actions { /*esto son los botones de pausa play retroceso y abanzar*/
+    position: absolute;
+    inset: 0; /*hace que el elemento tenga el tamaño identico al padre (el padre es el video) */
+    /*inset-block-end: 0;     todo 
+    inset-block-start: 0;         esto
+    inset-inline-end: 0;              es =
+    inset-inline-start: 0;                 a inset: 0; (osea el comando de arriba)                  */      
+    /*inset-block-start: ;  va des de "el numero insertado en px" des de el elemento relativo mas cercano osea "player" de (arriba abajo)*/
+    display:flex; /*con esto puedea hacer que los hijos puedan aliearse en el eje principal i tranversal osea en el central*/
+    justify-content: center; /*alinearse en el eje principal*/
+    align-items: center;  /*alinearse en el eje tranversal*/
+    /*z-index: 2; /*esto es para poner es estac encima y usar los botones dentro del video*/
+    gap: 20px; /*para separar los botones */
+    
+}
+.player-progress { /*esto es la linea de tiempo*/
+    position: absolute; /*para que este encima del video*/
+    inset-block-end: 0; /*para que este en la zona de abajo del video*/
+    inset-inline: 0; /*para que ocupe toda la zona de abajo del video*/
+    display: flex;  /*para que sea un elemeento flexible*/
+    padding: 9px; /*separarlo un podo de los lados para que no este pegado de los bordes*/
+}   
+.player-progress input{ /*para que la barra de tiempo del video se expanda en todo el ancho*/
+    flex: 1;
+}
+.player-overlay{ 
+    position: absolute;  /*para que tenga posicion absoluta*/
+    inset: 0;  /*para que se expanda */
+    opacity: 0; /*para que no se vea la oacidad*/
+    transition: .4s opacity; /*para que tenga una translicion de efecto suabe*/
+}
+
+.player:hover .player-overlay { /*esto oculta todo de encima del video hata cuando pasa el raton por encima del video*/
+    opacity: 1;
+}
